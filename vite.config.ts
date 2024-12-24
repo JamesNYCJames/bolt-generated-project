@@ -3,14 +3,14 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/bolt-generated-project/', // Replace with your repository name
   build: {
     outDir: 'dist',
-    sourcemap: false, // Set to true if you want source maps in production
-    // Optimize the build
+    sourcemap: false,
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true, // Remove console.logs in production
+        drop_console: true,
       },
     },
   },
@@ -18,3 +18,4 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
 });
+
